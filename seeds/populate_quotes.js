@@ -1,4 +1,21 @@
+const fs = require("fs");
+const file = require("../data/api-text.json");
+
 exports.seed = async function (knex) {
+  // TODO: this works for console.log(), but need to fix rhe problem of non-existing jsonData, I use a workaround for now
+  // fs.readFile("./data/api-text.json", "utf-8", (err, data) => {
+  //   if (err) {
+  //     console.error("Error reading file:", err);
+  //     return;
+  //   }
+
+  //   try {
+  //     const jsonData = JSON.parse(data);
+  //     // return jsonData;
+  //   } catch (error) {
+  //     console.error("Error parsing JSON:", error);
+  //   }
+  // });
   // Deletes ALL existing entries
   await knex("quotes").del();
   await knex("quotes").insert([
@@ -38,4 +55,5 @@ exports.seed = async function (knex) {
         "This series focuses on controversies and conspiracies on topics like Julian Assange's extradition, the Paul Pelosi attack, and ABC News producer James Gordon Meek's documentary, 3212 Un-Redacted, that was released just before the FBI raided his home and he seemingly vanished.",
     },
   ]);
+  await knex("quotes").insert({ id: 8, text_snipet: file.data.text });
 };
