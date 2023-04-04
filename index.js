@@ -6,6 +6,8 @@ const app = express();
 const cors = require("cors");
 // Require .env files for environment variables (keys and secrets)
 require("dotenv").config();
+const axios = require("axios");
+const quotesController = require("./controllers/quotesControllers");
 
 const port = process.env.PORT || 8080;
 
@@ -13,17 +15,23 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
-let quotes = [
-  { 1: "lime passes slowly" },
-  { 2: "olive oil is bad for your gut" },
-  { 3: "butter food better you" },
-  { 4: "amazing day" },
-  { 5: "apples are the best food ever" },
-];
+// this endpoint to return all quotes from db
+// to use: http://localhost:8080/all-quotes
+app.get("/all-quotes", quotesController.index);
 
-app.get("/process-text", function (req, res) {
-  res.status(200).json(quotes);
-});
+// to try external API: google audio-to-text
+// const requestBody = {
+//   "audio": {
+//     "content": "/* Your audio */"
+//   },
+//   "config": {
+//     "enableAutomaticPunctuation": true,
+//     "encoding": "LINEAR16",
+//     "languageCode": "en-US",
+//     "model": "default"
+//   }
+// }
+// app.get("https://speech.googleapis.com/v1p1beta1/speech:recognize", requestBody);
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`🚀Fire the command! Port: ${port}`);
