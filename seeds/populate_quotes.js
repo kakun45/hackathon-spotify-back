@@ -2,7 +2,7 @@ const fs = require("fs");
 const file = require("../data/api-text.json");
 
 exports.seed = async function (knex) {
-  // TODO: this works for console.log(), but need to fix rhe problem of non-existing jsonData, I use a workaround for now
+  // TODO: this works for console.log(), but need to fix the problem of non-existing var jsonData after that, I use a workaround for now:
   // fs.readFile("./data/api-text.json", "utf-8", (err, data) => {
   //   if (err) {
   //     console.error("Error reading file:", err);
