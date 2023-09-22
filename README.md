@@ -1,13 +1,15 @@
-## Spotify's hackathon backend
+# Spotify's hackathon backend
+## Author - Xeniya Shoiko, All rights reserved.
 
-The slideshow our team prodused: https://www.canva.com/design/DAFfGshr3yc/Q5bDBpcv8T3075XKrBWzXQ/edit?utm_content=DAFfGshr3yc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
-Figma from UX part of our team: https://www.figma.com/file/1iKePzmVdRMwtT25y4GCsK/Spotify-Goodies?node-id=35%3A53&t=6b95VFbrFbsw6Cv9-1
+The team: UI/UX designers, Data Science, and Software engineers. The code in the repo is my contribution.
 
 ![Xeniya Shoiko](https://user-images.githubusercontent.com/53381916/231593857-6a406597-2448-4485-8ee7-c4f4e3d41966.jpg)
 
+The slideshow our team produced: https://www.canva.com/design/DAFfGshr3yc/Q5bDBpcv8T3075XKrBWzXQ/edit?utm_content=DAFfGshr3yc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-## The problem space:
+Figma from UX part of our team: https://www.figma.com/file/1iKePzmVdRMwtT25y4GCsK/Spotify-Goodies?node-id=35%3A53&t=6b95VFbrFbsw6Cv9-1
+
+# The problem space:
 How would you make sharing Podcasts as fun, easy, and rewarding as sharing music?
 <img width="1291" alt="The problem defenition" src="https://user-images.githubusercontent.com/53381916/236076995-0b4dde8d-c3d3-410b-953b-90460952105d.png">
 
@@ -23,11 +25,11 @@ As a team, we tackled the challenge of sharing Podcasts and realized that the le
 ![data pipeline](https://user-images.githubusercontent.com/53381916/231593954-f4aefec9-9607-40d5-8383-cf36e946fec7.png)
 
 ## Inner workings:
-Our addition to the platform was to allow users to share audio snippets (Soundbites) of their favorite podcasts with their network. On the backend, we process the Soundbite to extract relevant information. As a member of the development team, I was responsible for building the server-side using Node.js, Express.js, and MySQL in JavaScript.
+Our addition to the platform was to allow users to share audio snippets (Soundbites) of their favorite podcasts with their network. On the backend, we process the Soundbite to extract relevant information. As a member of the development team, I was responsible for building the server side using Node.js, Express.js, and MySQL in JavaScript.
 
-My contributions included setting up a MySQL database to store user data, implementing RESTful APIs for data exchange, I worked on optimizing the server-side code to ensure fast and reliable performance.
+My contributions included setting up a MySQL database to store user data and implementing RESTful APIs for data exchange, I worked on optimizing the server-side code to ensure fast and reliable performance.
 
-By leveraging these technologies and my expertise, we were able to deliver a high-quality, user-friendly platform simprovement solution that allows podcast listeners to easily share and discover new content.   
+By leveraging these technologies and my expertise, we were able to deliver a high-quality, user-friendly platform improvement solution that allows podcast listeners to easily share and discover new content.   
 
 1. I set up a database
 The schema creates a table called `quotes` with three columns:
@@ -59,11 +61,11 @@ The schema creation also includes a promise-based function that logs a message w
 ```
 which allowed me to extract the text content from the MP3 files. Then, I used this information to create and write data files that we could easily insert into our database. To do this, I used the endpoint, which helped generate the data files from the external audio-to-text API responses:
 ```
-http://<host>/api-text-to-speach  // the endpoint to generate a data-file a from response of an external API 
+http://<host>/api-text-to-speach  // the endpoint to generate a data-file a from the response of an external API 
 ```
 
 3. To enable further analysis of our soundbites, I created an endpoint for our Data Scientists to query all the quotes from the database at 
 ```
 http://<host>/all-quotes  // this endpoint to return all quotes from db
 ``` 
-The goal was to leverage the power of NLP to extract valuable insights from the quotes, such as: Sentiment Analysis, Topic Modeling, Named Entity Recognition, Text Summarization, Language Translation, Intent Recognition, Text Classification, Entity Relationship Extraction. The end result would be a dashboard that presents these insights in a clear and actionable manner, allowing us to make data-driven decisions and improve the overall podcast listening experience for our users.
+The goal was to leverage the power of NLP to extract valuable insights from the quotes, such as Sentiment Analysis, Topic Modeling, Named Entity Recognition, Text Summarization, Language Translation, Intent Recognition, Text Classification, Entity Relationship Extraction. The end result would be a dashboard that presents these insights in a clear and actionable manner, allowing us to make data-driven decisions and improve the overall podcast listening experience for our users.
